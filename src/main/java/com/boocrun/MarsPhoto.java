@@ -31,6 +31,11 @@ public class MarsPhoto {
     public void setImgSrc(String imgSrc) {
         this.imgSrc = imgSrc;
     }
+    @Override
+    public String toString() {
+	return "MarsPhoto [id=" + id + ", sol=" + sol + ", camera=" + camera + ", imgSrc=" + imgSrc + "]";
+    }
+    
     
     
 

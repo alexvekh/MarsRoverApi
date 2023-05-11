@@ -1,4 +1,4 @@
-package com.boocrun;
+package com.boocrun.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

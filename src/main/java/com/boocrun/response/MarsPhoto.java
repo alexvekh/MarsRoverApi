@@ -1,9 +1,12 @@
-package com.boocrun;
+package com.boocrun.response;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class MarsPhoto {
     private Long id;
     private Integer sol;
     private MarsCamera camera;
+    @JsonProperty("img_src")
     private String imgSrc;
     
     

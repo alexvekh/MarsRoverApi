@@ -32,8 +32,7 @@ public class MarsRover {
     this.landingDate = landingDate;
   }
   
-  
-  
+   
   public String getLaunchDate() {
     return launchDate;
   }

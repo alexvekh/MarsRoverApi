@@ -5,10 +5,10 @@
   </head>
   <body>
     <h2>Welcome to the Mars Rover Api Web App</h2> 
+    <img th:each="photo : ${roverData.photos}" th:src="${photo.imgSrc}">
+    
+    <div th:text="${roverData}">The test </div>
 
-    <div th:text="${name}">The test </div>
-    <div th:text="${address}">The test </div>
-     <div>The test </div>
     
   </body>
 </html> 

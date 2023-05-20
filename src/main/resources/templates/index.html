@@ -7,19 +7,22 @@
   <body>
     <div class="container">
       <h2>Welcome to the Mars Rover Api Web App</h2> 
-      <div class="row g-2">
-        <div class="col-3" th:each="photo : ${roverData.photos}">
-             <img th:src="${photo.imgSrc}" class="img-fluid">
-        
-        
-        </div>
-      
+      <div class="btn-group btn-group-lg" role="group" style="margin-bottom: 1em;" aria-lebel="Basic example">
+        <button type="button" class="btn btn-secondary" id="curiosity"> Curiosity </button>
+        <button type="button" class="btn btn-secondary" id="opportunity"> Opportunity </button>
+        <button type="button" class="btn btn-secondary" id="spirit"> Spirit </button>
       
       </div>
       
-
-      //<img th:each="photo : ${roverData.photos}" th:src="${photo.imgSrc}">
-      // <div th:text="${roverData}">The test </div>
+      <div class="row g-2">
+        <div class="col-3" th:each="photo : ${roverData.photos}">
+             <img th:src="${photo.imgSrc}" class="img-fluid">
+                
+        </div>       
+      </div>
+      
+      <!--  <img th:each="photo : ${roverData.photos}" th:src="${photo.imgSrc}">  -->
+      <!--  <div th:text="${roverData}">The test </div>   -->
 
     </div>
   </body>

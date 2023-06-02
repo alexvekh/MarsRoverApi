@@ -8,12 +8,14 @@
   <body>
     <div class="container">
       <h2>Welcome to the Mars Rover Api Web App</h2> 
-      <div class="btn-group btn-group-lg" role="group" style="margin-bottom: 1em;" aria-lebel="Basic example">
-        <button type="button" class="btn btn-secondary" id="marsApiCuriosity"> Curiosity </button>
-        <button type="button" class="btn btn-secondary" id="marsApiOpportunity"> Opportunity </button>
-        <button type="button" class="btn btn-secondary" id="marsApiSpirit"> Spirit </button>
-      
-      </div>
+      <form method="post" action="" id="frmRoverRype">
+        <input type="hidden" id="marsApiRoverData" name="marsApiRoverData" value=""/>
+        <div class="btn-group btn-group-lg" role="group" style="margin-bottom: 1em;" aria-lebel="Basic example">
+          <button type="button" class="btn btn-secondary" id="marsApiCuriosity"> Curiosity </button>
+          <button type="button" class="btn btn-secondary" id="marsApiOpportunity"> Opportunity </button>
+          <button type="button" class="btn btn-secondary" id="marsApiSpirit"> Spirit </button>
+        </div>
+      </form>
       
       <div class="row g-2">
         <div class="col-3" th:each="photo : ${roverData.photos}">

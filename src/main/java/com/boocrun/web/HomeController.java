@@ -10,22 +10,27 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.boocrun.response.MarsRoverApiResponse;
 import com.boocrun.service.MarsRoverApiService;
 
+import io.micrometer.common.util.StringUtils;
+
 @Controller
 public class HomeController {
   
   @Autowired
   private MarsRoverApiService roverService;
   @GetMapping("/")
-  public String getHomeView (ModelMap model) {
-    MarsRoverApiResponse roverData = roverService.getRoverData("curiosity");  //opportunity
-    model.put("roverData", roverData);
-    return "index";
-  }
-  
-  @PostMapping("/")
-  public String postHomeView (ModelMap model, @RequestParam String marsApiRoverData) {
+  public String getHomeView (ModelMap model, @RequestParam(required=false) String marsApiRoverData) {
+    if (StringUtils.isEmpty(marsApiRoverData)) {
+      marsApiRoverData = "opportunity";
+    }
     MarsRoverApiResponse roverData = roverService.getRoverData(marsApiRoverData);  //opportunity
     model.put("roverData", roverData);
     return "index";
   }
+  
+//  @PostMapping("/")
+//  public String postHomeView (ModelMap model, @RequestParam String marsApiRoverData) {
+//    MarsRoverApiResponse roverData = roverService.getRoverData(marsApiRoverData);  //opportunity
+//    model.put("roverData", roverData);
+//    return "index";
+//  }
 }

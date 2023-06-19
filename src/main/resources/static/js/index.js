@@ -15,19 +15,15 @@ function getUrlParameter(name) {
   return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
 };
 
-const marsRoverType = getUrlParameter("marsApiRoverData");
+let marsRoverType = getUrlParameter('marsApiRoverData');
 
-if (marsRoverType == 'Curiosity') {
-  document.getElementById('marsApiCuriosity').classList.remove('btn-secondary');
-  document.getElementById('marsApiCuriosity').classList.add('btn-primary');
-} else if (marsRoverType == 'Opportunity') {
-  document.getElementById('marsApiOpportunity').classList.remove('btn-secondary');
-  document.getElementById('marsApiOpportunity').classList.add('btn-primary');
+highlightBtnByRoverType(marsRoverType);
+
+function highlightBtnByRoverType(roverType) {
   
-} else if (marsRoverType == 'Spirit') {
-  document.getElementById('marsApiSpirit').classList.remove('btn-secondary');
-  document.getElementById('marsApiSpirit').classList.add('btn-primary');
-} else {
-  document.getElementById('marsApiOpportunity').classList.remove('btn-secondary');
-  document.getElementById('marsApiOpportunity').classList.add('btn-primary');
-} 
+  if (roverType == '')
+  {roverType = 'Opportunity';}
+  
+  document.getElementById('marsApi' + roverType).classList.remove('btn-secondary');
+  document.getElementById('marsApi' + roverType).classList.add('btn-primary');
+}

@@ -18,9 +18,10 @@ public class HomeController {
   @Autowired
   private MarsRoverApiService roverService;
   @GetMapping("/")
-  public String getHomeView (ModelMap model, @RequestParam(required=false) 
-                              String marsApiRoverData, @RequestParam(required=false)
-                              Integer marsSol) {
+  public String getHomeView (ModelMap model, 
+                            @RequestParam(required=false) String marsApiRoverData, 
+                            @RequestParam(required=false) Integer marsSol,
+                            @RequestParam(required=false) Boolean efaultCheck1) {
     if (StringUtils.isEmpty(marsApiRoverData)) {
       marsApiRoverData = "opportunity";
     }

@@ -21,7 +21,7 @@ public class HomeController {
   @GetMapping("/")
   public String getHomeView (ModelMap model, HomeDto homeDto) {
     if (StringUtils.isEmpty(homeDto.getMarsApiRoverData())) {
-      homeDto.setMarsApiRoverData("opportunity");
+      homeDto.setMarsApiRoverData("Opportunity");
     }
     if (homeDto.getMarsSol() == null)
       homeDto.setMarsSol(1);

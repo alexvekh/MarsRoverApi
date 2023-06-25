@@ -79,11 +79,11 @@ public class HomeDto {
   public void setCameraPancam(Boolean cameraPancam) {
     this.cameraPancam = cameraPancam;
   }
-  public Boolean getCameraMinutes() {
+  public Boolean getCameraMinites() {
     return cameraMinites;
   }
-  public void setCameraMinutes(Boolean cameraMinutes) {
-    this.cameraMinites = cameraMinutes;
+  public void setCameraMinites(Boolean cameraMinites) {
+    this.cameraMinites = cameraMinites;
   }
 
   
